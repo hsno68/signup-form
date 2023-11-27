@@ -6,4 +6,27 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
+  background-image: url(imgs/holoearth.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.content {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.content > div {
+  flex: 1;
+}
+
+.content-container {
+  width: min(60rem, 100%);
 }
