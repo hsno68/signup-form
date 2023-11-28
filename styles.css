@@ -28,13 +28,13 @@ body {
 }
 
 .content-container {
-  width: min(60rem, 100%);
+  width: min(50rem, 100%);
   height: 100%;
   padding-left: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .content-header .content-container {
@@ -50,5 +50,30 @@ body {
 .content-footer button {
   padding: 10px 25px;
   border: none;
+  border-radius: 5px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form .form-row-container {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.form .form-control-container {
+  width: max(10rem, 40%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.form input {
+  padding: 5px;
+  appearance: none;
   border-radius: 5px;
 }
