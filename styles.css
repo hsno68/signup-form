@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: column;
   color: #063f5c;
-  background-color: rgb(67, 197, 245, 0.5);
+  background-image: url(imgs/background.png);
 }
 
 .content > div {
@@ -59,6 +59,10 @@ body {
   gap: 1.5rem;
 }
 
+.content-header {
+  background: linear-gradient(rgba(67, 197, 245, 0.5), rgba(255, 255, 255, 1));
+}
+
 .content-header .content-container {
   font-size: 1.5rem;
   font-weight: bold;
@@ -69,6 +73,10 @@ body {
 .content-body .content-container,
 .content-footer .content-container {
   padding-top: 1.5rem;
+}
+
+.content-footer {
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(67, 197, 245, 0.5));
 }
 
 .content-footer button {
@@ -94,10 +102,6 @@ body {
 
 .content-footer a:hover {
   text-decoration: underline;
-}
-
-.content-body {
-  background-image: url(imgs/background.png);
 }
 
 .content-body p {
