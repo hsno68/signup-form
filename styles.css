@@ -12,9 +12,29 @@ body {
 
 .sidebar {
   flex: 1;
+  background-color: #1f2937;
   background-image: url(imgs/holoearth.png);
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.sidebar .sidebar-banner,
+.sidebar .sidebar-footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.sidebar .sidebar-banner {
+  padding: 1rem;
+}
+
+.sidebar .sidebar-footer {
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
 }
 
 .content {
