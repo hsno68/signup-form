@@ -41,6 +41,8 @@ body {
   flex: 2;
   display: flex;
   flex-direction: column;
+  color: #063f5c;
+  background-color: rgb(67, 197, 245, 0.5);
 }
 
 .content > div {
@@ -59,6 +61,7 @@ body {
 
 .content-header .content-container {
   font-size: 1.5rem;
+  font-weight: bold;
   padding-bottom: 3rem;
   justify-content: flex-end;
 }
@@ -69,9 +72,32 @@ body {
 }
 
 .content-footer button {
-  padding: 10px 25px;
+  color: white;
+  background-color: #287bfe;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 36px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  transition: background-color 0.4s;
+}
+
+.content-footer button:hover {
+  background-color: #0d47a3;
+}
+
+.content-footer a {
+  color: #287bfe;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.content-footer a:hover {
+  text-decoration: underline;
+}
+
+.content-body {
+  background-image: url(imgs/background.png);
 }
 
 .form {
