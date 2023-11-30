@@ -100,14 +100,13 @@ body {
 .content-footer a {
   color: #287bfe;
   font-weight: bold;
-  text-decoration: none;
 }
 
 .content-footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-.content-body p {
+.content-body p:first-child {
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -137,7 +136,7 @@ body {
 }
 
 .form input {
-  padding: 5px;
+  padding: 10px;
   appearance: none;
   border: 1px solid #e5e7e8;
   border-radius: 5px;
