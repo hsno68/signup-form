@@ -120,7 +120,7 @@ body {
 
 .form .form-row-container {
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .form .form-control-container {
@@ -131,11 +131,16 @@ body {
   letter-spacing: 2px;
 }
 
+.form-control-container > div {
+  display: flex;
+}
+
 .form label {
   text-transform: uppercase;
 }
 
 .form input {
+  width: 100%;
   padding: 10px;
   appearance: none;
   border: 1px solid #e5e7e8;
@@ -144,15 +149,41 @@ body {
   letter-spacing: inherit;
 }
 
+input + span::before,
+input + span::after {
+  opacity: 0;
+  margin: 5px;
+  position: absolute;
+  transition: opacity 0.4s ease-in-out;
+}
+
+input + span::before {
+  color: lightgreen;
+  content: "\e86c";
+}
+
+input + span::after {
+  color: red;
+  content: "\e5c9";
+}
+
 .form input:focus {
   border-color: #43c5f5;
   box-shadow: -1px 2px 4px 2px rgba(67, 197, 245, 0.5);
 }
 
 input:not(:focus):not(:placeholder-shown):valid {
-  border-color: #43c5f5;
+  border-color: lightgreen;
 }
 
 input:not(:focus):not(:placeholder-shown):invalid {
   border-color: red;
+}
+
+input:not(:focus):not(:placeholder-shown):valid + span::before {
+  opacity: 1;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid + span::after {
+  opacity: 1;
 }

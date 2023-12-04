@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
   </head>
 
   <body>
@@ -27,31 +28,49 @@
             <div class="form-row-container">
               <div class="form-control-container">
                 <label for="username">*Username</label>
-                <input type="text" id="username" name="username" placeholder="" minlength="4" maxlength="16" required>
+                <div>
+                  <input type="text" id="username" name="username" placeholder="" minlength="4" maxlength="16" required>
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
               <div class="form-control-container">
                 <label for="display-name">*Display Name</label>
-                <input type="text" id="display-name" name="display-name" placeholder="" minlength="4" maxlength="16" required>
+                <div>
+                  <input type="text" id="display-name" name="display-name" placeholder="" minlength="4" maxlength="16" required>
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
             </div>
             <div class="form-row-container">
               <div class="form-control-container">
                 <label for="email">*Email</label>
-                <input type="email" id="email" name="email" placeholder="" required>
+                <div>
+                  <input type="email" id="email" name="email" placeholder="" required>
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
               <div class="form-control-container">
                 <label for="phone-number">Phone Number</label>
-                <input type="tel" id="phone-number" name="phone-number" placeholder="">
+                <div>
+                  <input type="tel" id="phone-number" name="phone-number" placeholder="">
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
             </div>
             <div class="form-row-container">
               <div class="form-control-container">
                 <label for="password">*Password</label>
-                <input type="password" id="password" name="password" placeholder="" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&?]).{8,32}$" required>
+                <div>
+                  <input type="password" id="password" name="password" placeholder="" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&?]).{8,32}$" required>
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
               <div class="form-control-container">
                 <label for="confirm-password">*Confirm Password</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&?]).{8,32}$" required>
+                <div>
+                  <input type="password" id="confirm-password" name="confirm-password" placeholder="" pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&?]).{8,32}$" required>
+                  <span class="material-symbols-outlined"></span>
+                </div>
               </div>
             </div>
           </form>
