@@ -63,5 +63,6 @@ function checkPasswordValidation() {
 function isFormSubmittable(e) {
   if (password.value != confirmPassword.value) {
     e.preventDefault();
+    alert("Passwords do not match.");
   }
 }
