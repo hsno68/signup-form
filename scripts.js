@@ -77,7 +77,7 @@ function checkPasswordValidation() {
     uppercaseValidation.classList.remove("valid");
   }
 
-  if (/[*.!@$%^&?]/g.test(password.value)) {
+  if (/[*.!@#$%^&?]/g.test(password.value)) {
     specialValidation.classList.add("valid");
   }
   else {
