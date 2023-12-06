@@ -97,4 +97,7 @@ function isFormSubmittable(e) {
     e.preventDefault();
     alert("Passwords do not match.");
   }
+  else {
+    alert("Form submitted!");
+  }
 }
