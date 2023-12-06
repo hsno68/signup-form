@@ -152,6 +152,8 @@ body {
 
 input + span::before,
 input + span::after {
+  font-family: "Material Symbols Outlined";
+  font-size: 1.5rem;
   opacity: 0;
   margin: 5px;
   position: absolute;
@@ -191,4 +193,27 @@ input:not(:focus):not(:placeholder-shown):valid + span::before,
 input:not(:focus):not(:placeholder-shown):invalid + span::after,
 .interacted:not(:placeholder-shown):invalid + span::after {
   opacity: 1;
+}
+
+.password-validation li {
+  list-style-type: none;
+  font-size: 18px;
+  color: #e5e7e8;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.4s ease-in-out;
+}
+
+.password-validation li::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e5c9";
+}
+
+.password-validation li.valid::before {
+  content: "\e86c";
+}
+
+.password-validation li.valid {
+  color: lightgreen;
 }
