@@ -155,7 +155,7 @@ input + span::after {
   opacity: 0;
   margin: 5px;
   position: absolute;
-  transition: opacity 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 input + span::before {
@@ -173,18 +173,22 @@ input + span::after {
   box-shadow: -1px 2px 4px 2px rgba(67, 197, 245, 0.5);
 }
 
-input:not(:focus):not(:placeholder-shown):valid {
+input:not(:focus):not(:placeholder-shown):valid,
+.interacted:not(:placeholder-shown):valid {
   border-color: lightgreen;
 }
 
-input:not(:focus):not(:placeholder-shown):invalid {
+input:not(:focus):not(:placeholder-shown):invalid,
+.interacted:not(:placeholder-shown):invalid {
   border-color: red;
 }
 
-input:not(:focus):not(:placeholder-shown):valid + span::before {
+input:not(:focus):not(:placeholder-shown):valid + span::before,
+.interacted:not(:placeholder-shown):valid + span::before {
   opacity: 1;
 }
 
-input:not(:focus):not(:placeholder-shown):invalid + span::after {
+input:not(:focus):not(:placeholder-shown):invalid + span::after,
+.interacted:not(:placeholder-shown):invalid + span::after {
   opacity: 1;
 }
