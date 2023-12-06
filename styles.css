@@ -131,7 +131,7 @@ body {
   letter-spacing: 2px;
 }
 
-.form-control-container > div {
+.form-control-container .validation-container {
   display: flex;
 }
 
