@@ -9,6 +9,11 @@ const uppercaseValidation = document.querySelector(".pass-uppercase-validation")
 const specialValidation = document.querySelector(".pass-special-validation");
 const minimumValidation = document.querySelector(".pass-minimum-validation");
 
+const visibilityToggleIcons = document.querySelectorAll("span");
+
+password.addEventListener("input", checkPasswordValidation);
+form.addEventListener("submit", isFormSubmittable);
+
 inputs.forEach(input => {
   input.addEventListener("blur", () => { 
     if (input.value) {
@@ -20,8 +25,35 @@ inputs.forEach(input => {
   });
 });
 
-password.addEventListener("input", checkPasswordValidation);
-form.addEventListener("submit", isFormSubmittable);
+visibilityToggleIcons.forEach(visibilityToggleIcon => {
+  visibilityToggleIcon.addEventListener("click", () => {
+    if (visibilityToggleIcon.classList.contains("password")) {
+      if (password.getAttribute("type") === "password") {
+        password.setAttribute("type", "text");
+        visibilityToggleIcon.textContent = "visibility_off";
+        visibilityToggleIcon.style.paddingTop = "2px";
+      }
+      else {
+        password.setAttribute("type", "password");
+        visibilityToggleIcon.textContent = "visibility";
+        visibilityToggleIcon.style.paddingTop = "0px";
+      }
+    }
+
+    if (visibilityToggleIcon.classList.contains("confirm-password")) {
+      if (confirmPassword.getAttribute("type") === "password") {
+        confirmPassword.setAttribute("type", "text");
+        visibilityToggleIcon.textContent = "visibility_off";
+        visibilityToggleIcon.style.paddingTop = "2px";
+      }
+      else {
+        confirmPassword.setAttribute("type", "password");
+        visibilityToggleIcon.textContent = "visibility";
+        visibilityToggleIcon.style.paddingTop = "0px";
+      }
+    }
+  });
+});
 
 function checkPasswordValidation() {
   if (/\d/g.test(password.value)) {

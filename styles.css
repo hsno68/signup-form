@@ -133,6 +133,9 @@ body {
 
 .form-control-container .validation-container {
   display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .form label {
@@ -156,6 +159,7 @@ input + span::after {
   font-size: 1.5rem;
   opacity: 0;
   margin: 5px;
+  top: 0;
   position: absolute;
   transition: all 0.4s ease-in-out;
 }
@@ -216,4 +220,18 @@ input:not(:focus):not(:placeholder-shown):invalid + span::after,
 
 .password-validation li.valid {
   color: lightgreen;
+}
+
+#password,
+#confirm-password {
+  padding-right: 50px;
+}
+
+.validation-container span:first-child {
+  position: absolute;
+  margin: 5px 10px;;
+}
+
+.validation-container span:first-child::selection {
+  background-color: white;;
 }
