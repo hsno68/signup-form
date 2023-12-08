@@ -31,12 +31,10 @@ visibilityToggleIcons.forEach(visibilityToggleIcon => {
       if (password.getAttribute("type") === "password") {
         password.setAttribute("type", "text");
         visibilityToggleIcon.textContent = "visibility_off";
-        visibilityToggleIcon.style.paddingTop = "2px";
       }
       else {
         password.setAttribute("type", "password");
         visibilityToggleIcon.textContent = "visibility";
-        visibilityToggleIcon.style.paddingTop = "0px";
       }
     }
 
@@ -44,12 +42,10 @@ visibilityToggleIcons.forEach(visibilityToggleIcon => {
       if (confirmPassword.getAttribute("type") === "password") {
         confirmPassword.setAttribute("type", "text");
         visibilityToggleIcon.textContent = "visibility_off";
-        visibilityToggleIcon.style.paddingTop = "2px";
       }
       else {
         confirmPassword.setAttribute("type", "password");
         visibilityToggleIcon.textContent = "visibility";
-        visibilityToggleIcon.style.paddingTop = "0px";
       }
     }
   });
