@@ -229,7 +229,11 @@ input:not(:focus):not(:placeholder-shown):invalid + span::after,
 
 .validation-container span:first-child {
   position: absolute;
-  margin: 5px 10px;;
+  margin: 5px 10px;
+}
+
+.validation-container span:first-child:hover {
+  cursor: pointer;
 }
 
 .validation-container span:first-child::selection {
