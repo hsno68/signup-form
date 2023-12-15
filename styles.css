@@ -123,7 +123,7 @@ body {
 }
 
 .form .form-control-container {
-  min-width: max(10rem, 40%);
+  width: max(10rem, 40%);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
