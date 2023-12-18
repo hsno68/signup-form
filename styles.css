@@ -224,9 +224,21 @@ input#confirm-password {
 }
 
 input#password ~ span:first-of-type::before,
-input#confirm-password ~ span:first-of-type::before {
-  content: "visibility";
+input#confirm-password ~ span:first-of-type::before,
+input#password ~ span:first-of-type::after,
+input#confirm-password ~ span:first-of-type::after {
+  cursor: pointer;
   margin: 8px 16px;
   position: absolute;
   right: 0;
+}
+
+input#password ~ span.invisible:first-of-type::before,
+input#confirm-password ~ span.invisible:first-of-type::before {
+  content: "visibility_off";
+}
+
+input#password ~ span.visible:first-of-type::after,
+input#confirm-password ~ span.visible:first-of-type::after {
+  content: "visibility";
 }

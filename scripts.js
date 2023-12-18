@@ -1,7 +1,8 @@
 const form = document.querySelector(".form");
-const inputs = document.querySelectorAll("input");
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#confirm-password");
+const inputs = document.querySelectorAll("input");
+const passwordVisibilityIcons = document.querySelectorAll(".visibility");
 
 const numberValidation = document.querySelector(".pass-number-validation");
 const lowercaseValidation = document.querySelector(".pass-lowercase-validation");
@@ -9,13 +10,13 @@ const uppercaseValidation = document.querySelector(".pass-uppercase-validation")
 const specialValidation = document.querySelector(".pass-special-validation");
 const minimumValidation = document.querySelector(".pass-minimum-validation");
 
-const passwordVisibilityIcon = document.querySelector(".password");
-const confirmPasswordVisibilityIcon = document.querySelector(".confirm-password");
-
 form.addEventListener("submit", isFormSubmittable);
 password.addEventListener("input", checkPasswordValidation);
 inputs.forEach(input => {
   input.addEventListener("blur", confirmUserInteraction);
+});
+passwordVisibilityIcons.forEach(passwordVisibilityIcon => {
+  passwordVisibilityIcon.addEventListener("click", toggleVisibility);
 });
 
 function isFormSubmittable(e) {
@@ -72,5 +73,35 @@ function confirmUserInteraction(input) {
   }
   else {
     inputElement.classList.remove("interacted");
+  }
+}
+
+function toggleVisibility(e) {
+  let iconElement = e.target;
+  switch (true) {
+    case iconElement.classList.contains("password"):
+      if (password.getAttribute("type") === "password") {
+        password.setAttribute("type", "text");
+        iconElement.classList.toggle("invisible");
+        iconElement.classList.toggle("visible");
+      }
+      else {
+        password.setAttribute("type", "password");
+        iconElement.classList.toggle("visible");
+        iconElement.classList.toggle("invisible");
+      }
+      break;
+    case iconElement.classList.contains("confirm-password"):
+      if (confirmPassword.getAttribute("type") === "password") {
+        confirmPassword.setAttribute("type", "text");
+        iconElement.classList.toggle("invisible");
+        iconElement.classList.toggle("visible");
+      }
+      else {
+        confirmPassword.setAttribute("type", "password");
+        iconElement.classList.toggle("visible");
+        iconElement.classList.toggle("invisible");
+      }
+      break;
   }
 }
