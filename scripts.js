@@ -9,43 +9,24 @@ const uppercaseValidation = document.querySelector(".pass-uppercase-validation")
 const specialValidation = document.querySelector(".pass-special-validation");
 const minimumValidation = document.querySelector(".pass-minimum-validation");
 
-const visibilityToggleIcons = document.querySelectorAll("span");
+const passwordVisibilityIcon = document.querySelector(".password");
+const confirmPasswordVisibilityIcon = document.querySelector(".confirm-password");
 
-password.addEventListener("input", checkPasswordValidation);
 form.addEventListener("submit", isFormSubmittable);
-
+password.addEventListener("input", checkPasswordValidation);
 inputs.forEach(input => {
-  input.addEventListener("blur", () => { 
-    if (input.value) {
-      input.classList.add("interacted");
-    }
-    else {
-      input.classList.remove("interacted");
-    }
-  });
+  input.addEventListener("blur", confirmUserInteraction);
 });
 
-visibilityToggleIcons.forEach(visibilityToggleIcon => {
-  visibilityToggleIcon.addEventListener("click", () => {
-    if (visibilityToggleIcon.classList.contains("password")) {
-      if (password.getAttribute("type") === "password") {
-        password.setAttribute("type", "text");
-      }
-      else {
-        password.setAttribute("type", "password");
-      }
-    }
-
-    if (visibilityToggleIcon.classList.contains("confirm-password")) {
-      if (confirmPassword.getAttribute("type") === "password") {
-        confirmPassword.setAttribute("type", "text");
-      }
-      else {
-        confirmPassword.setAttribute("type", "password");
-      }
-    }
-  });
-});
+function isFormSubmittable(e) {
+  if (password.value != confirmPassword.value) {
+    e.preventDefault();
+    alert("Passwords do not match.");
+  }
+  else {
+    alert("Form submitted!");
+  }
+}
 
 function checkPasswordValidation() {
   if (/\d/g.test(password.value)) {
@@ -84,12 +65,12 @@ function checkPasswordValidation() {
   }
 }
 
-function isFormSubmittable(e) {
-  if (password.value != confirmPassword.value) {
-    e.preventDefault();
-    alert("Passwords do not match.");
+function confirmUserInteraction(input) {
+  let inputElement = input.target;
+  if (inputElement.value) {
+    inputElement.classList.add("interacted");
   }
   else {
-    alert("Form submitted!");
+    inputElement.classList.remove("interacted");
   }
 }
