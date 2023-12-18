@@ -133,9 +133,8 @@ body {
 
 .form-control-container .validation-container {
   display: flex;
-  position: relative;
-  justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 
 .form label {
@@ -153,25 +152,24 @@ body {
   letter-spacing: inherit;
 }
 
-input + span::before,
-input + span::after {
-  font-family: "Material Symbols Outlined";
+input ~ span:last-child::before,
+input ~ span:last-child::after {
   font-size: 1.5rem;
   opacity: 0;
   margin: 5px;
-  top: 0;
   position: absolute;
+  top: 0;
   transition: all 0.4s ease-in-out;
 }
 
-input + span::before {
+input ~ span:last-child::before {
   color: lightgreen;
-  content: "\e86c";
+  content: "check_circle";
 }
 
-input + span::after {
+input ~ span:last-child::after {
   color: red;
-  content: "\e5c9";
+  content: "cancel";
 }
 
 .form input:focus {
@@ -189,13 +187,13 @@ input:not(:focus):not(:placeholder-shown):invalid,
   border-color: red;
 }
 
-input:not(:focus):not(:placeholder-shown):valid + span::before,
-.interacted:not(:placeholder-shown):valid + span::before {
+input:not(:focus):not(:placeholder-shown):valid ~ span:last-child::before,
+.interacted:not(:placeholder-shown):valid ~ span::before {
   opacity: 1;
 }
 
-input:not(:focus):not(:placeholder-shown):invalid + span::after,
-.interacted:not(:placeholder-shown):invalid + span::after {
+input:not(:focus):not(:placeholder-shown):invalid ~ span:last-child::after,
+.interacted:not(:placeholder-shown):invalid ~ span::after {
   opacity: 1;
 }
 
@@ -225,17 +223,4 @@ input:not(:focus):not(:placeholder-shown):invalid + span::after,
 #password,
 #confirm-password {
   padding-right: 50px;
-}
-
-.validation-container span:first-child {
-  position: absolute;
-  margin: 5px 10px;
-}
-
-.validation-container span:first-child:hover {
-  cursor: pointer;
-}
-
-.validation-container span:first-child::selection {
-  background-color: white;;
 }

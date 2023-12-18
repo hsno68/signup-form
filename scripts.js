@@ -30,22 +30,18 @@ visibilityToggleIcons.forEach(visibilityToggleIcon => {
     if (visibilityToggleIcon.classList.contains("password")) {
       if (password.getAttribute("type") === "password") {
         password.setAttribute("type", "text");
-        visibilityToggleIcon.textContent = "visibility_off";
       }
       else {
         password.setAttribute("type", "password");
-        visibilityToggleIcon.textContent = "visibility";
       }
     }
 
     if (visibilityToggleIcon.classList.contains("confirm-password")) {
       if (confirmPassword.getAttribute("type") === "password") {
         confirmPassword.setAttribute("type", "text");
-        visibilityToggleIcon.textContent = "visibility_off";
       }
       else {
         confirmPassword.setAttribute("type", "password");
-        visibilityToggleIcon.textContent = "visibility";
       }
     }
   });
