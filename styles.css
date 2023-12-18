@@ -155,7 +155,7 @@ input ~ span:last-child::before,
 input ~ span:last-child::after {
   font-size: 1.5rem;
   opacity: 0;
-  margin: 5px;
+  margin: 8px 5px;
   position: absolute;
   transition: all 0.4s ease-in-out;
 }
@@ -221,4 +221,12 @@ input:not(:focus):not(:placeholder-shown):invalid ~ span:last-child::after,
 input#password,
 input#confirm-password {
   padding-right: 3rem;
+}
+
+input#password ~ span:first-of-type::before,
+input#confirm-password ~ span:first-of-type::before {
+  content: "visibility";
+  margin: 8px 16px;
+  position: absolute;
+  right: 0;
 }
