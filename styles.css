@@ -138,7 +138,10 @@ body {
 
 .form label {
   text-wrap: nowrap;
-  text-transform: uppercase;
+}
+
+span {
+  font-size: 0.8rem;
 }
 
 .form input {
